@@ -1,9 +1,44 @@
 @import '_reset';
 @import '_variables';
-@import '_globals';
 @import '_mixins';
+@import '_globals';
 @import '_placeholders';
 
-body {
-    background-color: blue;
+.intro {
+    max-width: em(700);
+    margin: 0 auto;
+}
+
+.alpha {
+    font-size: em(36);
+    margin: em(20) 0;
+}
+
+.beta {
+    font-size: em(20);
+    margin-bottom: em(30);
+}
+
+.input {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    max-width: em(600);
+    margin: 0 auto em(40);
+    height: em(300);
+
+    &__button {
+        width: em(100);
+        height: em(50);
+        border-radius: 4px;
+        margin: 0 auto;
+    }
+}
+
+
+.output {
+
+    &__letter {
+        display: inline;
+    }
 }

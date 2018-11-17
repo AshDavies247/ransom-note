@@ -127,7 +127,43 @@ body {
   margin-bottom: 0px;
   margin-left: 0px; }
 
+html {
+  font-size: 62.5%; }
+
 body {
-  background-color: blue; }
+  font-size: 20px;
+  font-size: 2rem;
+  box-sizing: border-box;
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  background-color: salmon;
+  text-align: center; }
+
+.intro {
+  max-width: 35em;
+  margin: 0 auto; }
+
+.alpha {
+  font-size: 1.8em;
+  margin: 1em 0; }
+
+.beta {
+  font-size: 1em;
+  margin-bottom: 1.5em; }
+
+.input {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  max-width: 30em;
+  margin: 0 auto 2em;
+  height: 15em; }
+  .input__button {
+    width: 5em;
+    height: 2.5em;
+    border-radius: 4px;
+    margin: 0 auto; }
+
+.output__letter {
+  display: inline; }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <title>Ransom Note</title>
+</head>
+
+<body>
+    <section class="intro">
+        <h1 class="alpha">Ransom Note</h1>
+        <h2 class="beta">A ransom note generator that takes the text from the text field, then generates a series of
+            random shapes and fonts to output it looking like a ransom note</h2>
+    </section>
+
+    <main>
+        <section class="input">
+            <label for="ransom-note" class="input__label">Type your note below</label>
+            <textarea data-input="ransom-note" name="ransom-note" id="ransom-note" cols="30" rows="10" class="input__form"></textarea>
+            <button id="submit" data-input="submit" class="input__button">Submit</button>
+        </section>
+
+        <section class="output">
+            <h2 class="output__header beta">Here's your note!</h2>
+            <div id="wrapper" data-output="wrapper" class="output__wrapper">
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
