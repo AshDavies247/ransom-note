@@ -33,8 +33,3 @@ createNewNote = () => {
     })
     inputForm.value = '';
 }
-
-testDelete = () => {
-    var test = document.getElementById("ransom-note");
-    test.parentNode.removeChild(test);
-}
