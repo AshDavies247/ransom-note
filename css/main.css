@@ -135,11 +135,12 @@ body {
   font-size: 2rem;
   box-sizing: border-box;
   font-family: "Source Sans Pro", Arial, sans-serif;
-  background-color: salmon;
-  text-align: center; }
+  background-color: #fff0a5; }
 
-.intro {
+.site__wrapper {
+  text-align: center;
   max-width: 35em;
+  padding: 0 10px;
   margin: 0 auto; }
 
 .alpha {
@@ -154,8 +155,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  max-width: 30em;
-  margin: 0 auto 2em;
+  margin-bottom: 2em;
   height: 15em; }
   .input__button {
     width: 5em;
@@ -164,7 +164,7 @@ body {
     margin: 0 auto; }
 
 .output__letter {
-  display: inline;
+  display: inline-block;
   margin: 0 0.25em; }
 
 /*# sourceMappingURL=main.css.map */

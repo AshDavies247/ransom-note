@@ -4,8 +4,10 @@
 @import '_globals';
 @import '_placeholders';
 
-.intro {
+.site__wrapper {
+    text-align: center;
     max-width: em(700);
+    padding: 0 10px;
     margin: 0 auto;
 }
 
@@ -23,8 +25,7 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    max-width: em(600);
-    margin: 0 auto em(40);
+    margin-bottom: em(40);
     height: em(300);
 
     &__button {
@@ -39,7 +40,7 @@
 .output {
 
     &__letter {
-        display: inline;
+        display: inline-block;
         margin: 0 em(5);
     }
 }
