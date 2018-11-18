@@ -35,15 +35,27 @@ createNewNote = () => {
 }
 
 setNoteStyles = () => {
+    p.style.fontFamily = randomFont();
+    p.style.padding = randomNumber(10, 5) + 'px';
+    p.style.fontWeight = randomNumber(700, 300);
+    p.style.fontSize = randomNumber(50, 20) + 'px';
+    p.style.backgroundColor = randomColor();
+}
+
+randomFont = () => {
+    font = fonts[Math.floor(Math.random() * fonts.length)];
+    return font;
+}
+
+randomNumber = (max, min) => {
+    var number = Math.floor(Math.random() * (max - min + 1)) + min;
+    return number;
+}
+
+randomColor = () => {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
     var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-
-    p.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
-    p.style.height = Math.floor(Math.random() * (100 - 75 + 1)) + 75 + 'px';
-    p.style.width = Math.floor(Math.random() * (100 - 75 + 1)) + 75 + 'px';
-    p.style.fontWeight = Math.floor(Math.random() * (700 - 300 + 1)) + 300;
-    p.style.fontSize = Math.floor(Math.random() * (40 - 20 + 1)) + 20 + 'px';
-    p.style.backgroundColor = bgColor;
+    return bgColor;
 }
