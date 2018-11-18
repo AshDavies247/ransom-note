@@ -6,18 +6,16 @@ var outputArea = document.querySelector("[data-output='wrapper']");
 var outputItems = document.getElementsByClassName("output__letter");
 
 inputButton.addEventListener("click", () => {
-
-
-    if (outputItems.length > 0) {
+    if (outputItems.length > 0 && inputForm.value != 0) {
         deleteOldNote();
     }
     createNewNote();
-
+    // inputForm.value = '';
 });
 
 deleteOldNote = () => {
     var outputItemsArray = [].slice.call(outputItems);
-    outputItemsArray.forEach(function (e) {
+    outputItemsArray.forEach((e) => {
         e.parentNode.removeChild(e);
     });
 }
@@ -25,11 +23,27 @@ deleteOldNote = () => {
 createNewNote = () => {
     var inputArray = inputForm.value.split('');
     inputArray.forEach((e) => {
-        var div = document.createElement('p');
-        div.setAttribute('data-output', 'letter');
-        div.setAttribute('class', 'output__letter');
-        div.innerHTML = e;
-        outputArea.appendChild(div);
+        // outputting the letters of the input as separate elements
+        var p = document.createElement('p');
+        p.innerHTML = e;
+        outputArea.appendChild(p);
+        p.setAttribute('data-output', 'letter');
+        p.setAttribute('class', 'output__letter');
+        window.p = p;
+        setNoteStyles();
     })
-    inputForm.value = '';
+}
+
+setNoteStyles = () => {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+    p.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)];
+    p.style.height = Math.floor(Math.random() * (100 - 75 + 1)) + 75 + 'px';
+    p.style.width = Math.floor(Math.random() * (100 - 75 + 1)) + 75 + 'px';
+    p.style.fontWeight = Math.floor(Math.random() * (700 - 300 + 1)) + 300;
+    p.style.fontSize = Math.floor(Math.random() * (40 - 20 + 1)) + 20 + 'px';
+    p.style.backgroundColor = bgColor;
 }

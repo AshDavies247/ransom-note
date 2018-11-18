@@ -164,6 +164,7 @@ body {
     margin: 0 auto; }
 
 .output__letter {
-  display: inline; }
+  display: inline;
+  margin: 0 0.25em; }
 
 /*# sourceMappingURL=main.css.map */
