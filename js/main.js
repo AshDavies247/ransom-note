@@ -3,57 +3,45 @@ var fonts = ['Abadi MT Condensed Light', 'Albertus Extra Bold', 'Albertus Medium
 var inputForm = document.querySelector("[data-input='ransom-note']");
 var inputButton = document.querySelector("[data-input='submit']");
 var outputArea = document.querySelector("[data-output='wrapper']");
-var outputItems = outputArea.childNodes;
-var outputWords = document.querySelectorAll('[data-output="word"]');
+var outputItems = document.getElementsByClassName("output__letter");
 
 inputButton.addEventListener("click", () => {
     if (outputItems.length > 0 && inputForm.value != 0) {
-        deleteNote();
+        deleteOldNote();
     }
-    createNewWord();
+    createNewNote();
     // inputForm.value = '';
 });
 
-deleteNote = () => {
+deleteOldNote = () => {
     var outputItemsArray = [].slice.call(outputItems);
     outputItemsArray.forEach((e) => {
         e.parentNode.removeChild(e);
     });
 }
 
-createNewWord = () => {
-    var inputArray = inputForm.value.split(' ');
-    inputArray.forEach((e) => {
-        // Output words into divs
-        var word = document.createElement('p');
-        word.innerHTML = e;
-        outputArea.appendChild(word);
-        word.setAttribute('data-output', 'word');
-        word.setAttribute('class', 'output__word');
-        window.word = word;
-        createNoteLetters();
-    })
-}
+createNewNote = () => {
+    var inputArray = inputForm.value.split('');
 
-createNoteLetters = () => {
-    var letters = word.innerHTML.split('');
-    letters.forEach((e) => {
+    inputArray.forEach((e) => {
+        // outputting the letters of the input as separate elements
         var p = document.createElement('p');
         p.innerHTML = e;
         outputArea.appendChild(p);
         p.setAttribute('data-output', 'letter');
         p.setAttribute('class', 'output__letter');
         window.p = p;
-        setNoteStyles();
+
+        if (e != ' ') {
+            setNoteStyles();
+        } else {
+            addSpace();
+        }
     })
-    deleteWords();
 }
 
-deleteWords = () => {
-    var wordArray = [].slice.call(outputWords);
-    wordArray.forEach((e) => {
-        e.parentNode.removeChild(e);
-    });
+addSpace = () => {
+    p.style.marginRight = '20px';
 }
 
 setNoteStyles = () => {
