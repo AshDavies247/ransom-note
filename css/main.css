@@ -163,8 +163,15 @@ body {
     border-radius: 4px;
     margin: 0 auto; }
 
+.output__word {
+  display: inline-block;
+  margin-right: 0.25em; }
+  .output__word:last-child {
+    margin-right: 0; }
 .output__letter {
   display: inline-block;
-  margin: 0 0.25em; }
+  margin-right: 0.25em; }
+  .output__letter:last-child {
+    margin-right: 0; }
 
 /*# sourceMappingURL=main.css.map */

@@ -36,11 +36,23 @@
     }
 }
 
-
 .output {
+
+    &__word {
+        display: inline-block;
+        margin-right: em(5);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 
     &__letter {
         display: inline-block;
-        margin: 0 em(5);
+        margin-right: em(5);
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }

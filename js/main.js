@@ -3,27 +3,41 @@ var fonts = ['Abadi MT Condensed Light', 'Albertus Extra Bold', 'Albertus Medium
 var inputForm = document.querySelector("[data-input='ransom-note']");
 var inputButton = document.querySelector("[data-input='submit']");
 var outputArea = document.querySelector("[data-output='wrapper']");
-var outputItems = document.getElementsByClassName("output__letter");
+var outputItems = outputArea.childNodes;
+var outputWords = document.querySelectorAll('[data-output="word"]');
 
 inputButton.addEventListener("click", () => {
     if (outputItems.length > 0 && inputForm.value != 0) {
-        deleteOldNote();
+        deleteNote();
     }
-    createNewNote();
+    createNewWord();
     // inputForm.value = '';
 });
 
-deleteOldNote = () => {
+deleteNote = () => {
     var outputItemsArray = [].slice.call(outputItems);
     outputItemsArray.forEach((e) => {
         e.parentNode.removeChild(e);
     });
 }
 
-createNewNote = () => {
-    var inputArray = inputForm.value.split('');
+createNewWord = () => {
+    var inputArray = inputForm.value.split(' ');
     inputArray.forEach((e) => {
-        // outputting the letters of the input as separate elements
+        // Output words into divs
+        var word = document.createElement('p');
+        word.innerHTML = e;
+        outputArea.appendChild(word);
+        word.setAttribute('data-output', 'word');
+        word.setAttribute('class', 'output__word');
+        window.word = word;
+        createNoteLetters();
+    })
+}
+
+createNoteLetters = () => {
+    var letters = word.innerHTML.split('');
+    letters.forEach((e) => {
         var p = document.createElement('p');
         p.innerHTML = e;
         outputArea.appendChild(p);
@@ -32,6 +46,14 @@ createNewNote = () => {
         window.p = p;
         setNoteStyles();
     })
+    deleteWords();
+}
+
+deleteWords = () => {
+    var wordArray = [].slice.call(outputWords);
+    wordArray.forEach((e) => {
+        e.parentNode.removeChild(e);
+    });
 }
 
 setNoteStyles = () => {
