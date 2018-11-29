@@ -28,6 +28,10 @@
     margin-bottom: em(40);
     height: em(300);
 
+    &__form {
+        margin: em(20) 0;
+    }
+
     &__button {
         width: em(100);
         height: em(50);
