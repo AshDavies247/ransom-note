@@ -28,10 +28,6 @@
     margin-bottom: em(40);
     height: em(300);
 
-    &__form {
-        margin: em(20) 0;
-    }
-
     &__button {
         width: em(100);
         height: em(50);
@@ -42,8 +38,21 @@
 
 .output {
 
+    &__word {
+        display: inline-block;
+        margin-right: em(5);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
     &__letter {
         display: inline-block;
-        margin: 0 em(4);
+        margin-right: em(5);
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
