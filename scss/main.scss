@@ -2,7 +2,6 @@
 @import '_variables';
 @import '_mixins';
 @import '_globals';
-@import '_placeholders';
 
 .site__wrapper {
     text-align: center;
@@ -40,7 +39,7 @@
 
     &__word {
         display: inline-block;
-        margin-right: em(5);
+        margin-right: em(40);
 
         &:last-child {
             margin-right: 0;

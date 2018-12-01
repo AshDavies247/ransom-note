@@ -165,7 +165,7 @@ body {
 
 .output__word {
   display: inline-block;
-  margin-right: 0.25em; }
+  margin-right: 2em; }
   .output__word:last-child {
     margin-right: 0; }
 .output__letter {

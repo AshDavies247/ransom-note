@@ -25,7 +25,7 @@ createNewWord = () => {
     var inputArray = inputForm.value.split(' ');
     inputArray.forEach((e) => {
         // Output words into divs
-        var word = document.createElement('p');
+        var word = document.createElement('div');
         word.innerHTML = e;
         outputArea.appendChild(word);
         word.setAttribute('data-output', 'word');
@@ -37,10 +37,11 @@ createNewWord = () => {
 
 createNoteLetters = () => {
     var letters = word.innerHTML.split('');
+    window.letters = letters;
     letters.forEach((e) => {
         var p = document.createElement('p');
         p.innerHTML = e;
-        outputArea.appendChild(p);
+        word.appendChild(p);
         p.setAttribute('data-output', 'letter');
         p.setAttribute('class', 'output__letter');
         window.p = p;
@@ -50,10 +51,15 @@ createNoteLetters = () => {
 }
 
 deleteWords = () => {
-    var wordArray = [].slice.call(outputWords);
-    wordArray.forEach((e) => {
-        e.parentNode.removeChild(e);
-    });
+    var el = word, child = el.firstChild, nextChild;
+
+    while (child) {
+        nextChild = child.nextSibling;
+        if (child.nodeType == 3) {
+            el.removeChild(child);
+        }
+        child = nextChild;
+    }
 }
 
 setNoteStyles = () => {
