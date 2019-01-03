@@ -10,7 +10,12 @@ var outputWords = $('[data-output="word"]');
 inputButton.on('click', () => {
     deleteNote()
     createNewWord();
+    inputButton.html('Try Again');
 });
+
+inputForm.on('input',() => {
+    inputButton.html('Submit');
+})
 
 deleteNote = () => {
     outputArea.empty();
@@ -66,7 +71,6 @@ randomFont = () => {
 
 randomTilt = () => {
     var number = Math.floor(Math.random() * (5 - -5 + 1)) + -5;
-    console.log(number);
     return number;
 }
 
