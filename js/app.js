@@ -56,11 +56,18 @@ setNoteStyles = () => {
     p.css('font-weight',randomNumber(700, 300));
     p.css('font-size',randomNumber(50, 20) + 'px');
     p.css('background-color',randomColor());
+    p.css({'transform' : 'rotate('+ randomTilt() +'deg)'});
 }
 
 randomFont = () => {
     font = fonts[Math.floor(Math.random() * fonts.length)];
     return font;
+}
+
+randomTilt = () => {
+    var number = Math.floor(Math.random() * (5 - -5 + 1)) + -5;
+    console.log(number);
+    return number;
 }
 
 randomNumber = (max, min) => {
